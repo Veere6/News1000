@@ -64,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
         newsAdapter=new NewsAdapter(dataList,MainActivity.this);
         news_Recycler.setAdapter(newsAdapter);
         Date c = Calendar.getInstance().getTime();
-
-
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         currentdate = df.format(c);
         getNewsdata("indore");
