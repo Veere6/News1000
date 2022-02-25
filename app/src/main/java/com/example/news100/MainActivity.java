@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
             progressBar.setVisibility(View.VISIBLE);
             dataList.clear();
             RequestQueue requstQueue = Volley.newRequestQueue(this);
-            StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://newsapi.org/v2/everything?q="+feed+"&from="+currentdate+"&sortBy=publishedAt&apiKey=89c68de352f74d1ca14334cabb43597f" , new Response.Listener<String>() {
+            StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://newsapi.org/v2/everything?q="+feed+"&from="+"2022-02-25"+"&sortBy=publishedAt&apiKey=d89c7f26ee76480bb689199230a449cd" , new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     System.out.println("NEWS APi => " +"https://newsapi.org/v2/everything?q="+feed+"&from="+currentdate+"&sortBy=publishedAt&apiKey=89c68de352f74d1ca14334cabb43597f");
@@ -122,6 +122,10 @@ public class MainActivity extends AppCompatActivity {
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
+                        nodata.setText(e.toString());
+                        nodata.setVisibility(View.VISIBLE);
+                        news_Recycler.setVisibility(View.GONE);
+                        progressBar.setVisibility(View.GONE);
                     }
 
 
